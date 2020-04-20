@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+
+    <bean id="persona" class="com.learn.beans.Persona">
+        <constructor-arg value="1"></constructor-arg>
+        <constructor-arg value="Amets"></constructor-arg>
+        <constructor-arg value="Diaz"></constructor-arg>
+    </bean>
+
+    <!-- TYPE: asigna el tipo de valor
+
+    <bean id="persona" class="com.learn.beans.Persona">
+        <constructor-arg type="String" value="Amets"></constructor-arg>
+        <constructor-arg type="int" value="1"></constructor-arg>
+        <constructor-arg type="String" value="Diaz"></constructor-arg>
+    </bean>
+    -->
+
+    <!-- INDEX: indica el orden del valor segun el metodo Persona
+
+    <bean id="persona" class="com.learn.beans.Persona">
+        <constructor-arg index="2" value="Diaz"></constructor-arg>
+        <constructor-arg index="0" value="1"></constructor-arg>
+        <constructor-arg index="1" value="Amets"></constructor-arg>
+    </bean>
+    -->
+
+</beans>

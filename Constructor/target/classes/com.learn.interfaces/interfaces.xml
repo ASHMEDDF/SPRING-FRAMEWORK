@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+<!--EN LA PARTE DE ARRIBA ES ASIGNADA LA DIRECCION DE LOS CONTEXT DE SPRING-->
+<!--SE AGREGA EL "CONTEXT" PARA QUE TODAS LAS ANOTACIONES SEAN DETECTATAS CORRECTAMENTE-->
+    <context:annotation-config> </context:annotation-config>
+
+
+<!--SE AGREGA LA DIRECCION DE LA CLASE DE LA ANOTACION AUTOWIRE UBICADA EN LAS LIBRERIAS EXTERNAS-->
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"> </bean>
+
+    <bean id="messi" class="com.learn.usoInterfaces.Jugador">
+
+        <property name="numero" value="10"> </property>
+        <property name="nombre" value="Leo Messi"> </property>
+        <!--SE COMENTA LA SIGUIENTE LINEA, LA CUAL SERA RELACIONADA CON LAS DEPENDENCIAS DE MANERA IMPLICITA CON AUTOWIRE ANNOTATIONS-->
+        <!--<property name="equipo" ref="barcelona"> </property>-->
+    </bean>
+
+
+    <bean id="barcelona" class="com.learn.usoInterfaces.Barcelona">
+<!--SE AGREGA EN AL BEAN, "QUALIFIER" PARA HACER EL "AUTOWIRE-BY TIPE"-->
+        <qualifier value="barcelonaQualifier"> </qualifier>
+    </bean>
+    <bean id="juventus" class="com.learn.usoInterfaces.Juventus"> </bean>
+</beans>

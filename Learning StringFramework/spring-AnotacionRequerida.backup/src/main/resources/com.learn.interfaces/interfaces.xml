@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--SE LLAMA A LA CLASE "RequiredAnnotationBeanPostProcessor" UBICCADO EN LAS LIBRERIAS EXTERNAS-->
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"> </bean>
+
+    <bean id="messi" class="com.learn.usoInterfaces.Jugador">
+
+   <!-- <property name="numero" value="10"> </property>
+   COMENTO LA LINEA "NUMERO" PARA QUE SE NOTIFIQUE QUE ES REQUERIDA-->
+
+        <property name="nombre" value="Leo Messi"> </property>
+        <property name="equipo" ref="barcelona"> </property>
+    </bean>
+
+    <bean id="barcelona" class="com.learn.usoInterfaces.Barcelona"> </bean>
+    <bean id="juventus" class="com.learn.usoInterfaces.Juventus"> </bean>
+</beans>
